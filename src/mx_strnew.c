@@ -1,6 +1,7 @@
 #include "libmx.h"
 
 char *mx_strnew(const int size) {
+    
     char *result = (char *)malloc(size + 1);
 
     if (size < 0 || result == NULL) {
