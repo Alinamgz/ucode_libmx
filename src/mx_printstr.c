@@ -1,6 +1,4 @@
-#include <unistd.h>
-
-int mx_strlen(const char *s);
+#include "libmx.h"
 
 void mx_printstr(const char *s) {
     int len = mx_strlen(s);
