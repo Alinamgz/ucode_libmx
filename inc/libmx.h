@@ -48,7 +48,9 @@ void mx_printint(int n);
 void mx_printstr(const char *s);
 
 // ------- STRING -------
+char *mx_strdup(const char *str);
 char *mx_strnew(const int size);
+char *mx_strcpy(char *dst, const char *src);
 
 int mx_strcmp(const char *s1, const char *s2);
 int mx_strlen(const char *s);
