@@ -6,9 +6,11 @@ char *mx_strjoin(char const *s1, char const *s2) {
 
     if (s1 == NULL && s2 == NULL) {
         return NULL;
-    } else if (s1 == NULL || s2 == NULL) {
+    }
+    else if (s1 == NULL || s2 == NULL) {
         result = s1 ? mx_strdup(s1) : mx_strdup(s2);
-    } else {
+    }
+    else {
         result_size = mx_strlen(s1) + mx_strlen(s2);
         result = mx_strnew(result_size);
         mx_strcpy(result, s1);

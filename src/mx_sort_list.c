@@ -1,32 +1,24 @@
 #include "libmx.h"
 
-// TODO read, understant, REFACTOR!
-t_list *mx_sort_list(t_list *list, bool (*cmp)(void *, void *)) {
-    t_list *buff = list;
+// cmp = (a > b) ? true : false
+
+t_list *mx_sort_list(t_list *lst, bool (*cmp)(void *, void *)) {
     t_list *temp;
-    int count = 0;
+    t_list *buff = lst;
+    bool cmp_rslt = false;
+    int lst_len = mx_list_size(buff);
 
-    while (buff->next) {
-        if (cmp(buff->data, buff->next->data)) {
-            temp = buff->next->data;
-            buff->next->data = buff->data;
-            buff->data = temp;
-        }
-        buff = buff->next;
-        count++;
-    }
-
-    for (int i = count; i > 0; i--) {
-        buff = list;
-
+    for (int i = lst_len - 1; i > 0; i--) {
+        buff = lst;
         for (int j = 0; j < i; j++) {
-            if (cmp(buff->data, buff->next->data)) {
-                temp = buff->next->data;
-                buff->next->data = buff->data;
-                buff->data = temp;
+            cmp_rslt = cmp(buff->data, buff->next->data);
+            if (cmp_rslt == true) {
+                temp = buff->data;
+                buff->data = buff->next->data;
+                buff->next->data = temp;
             }
             buff = buff->next;
         }
     }
-    return list;
+    return lst;
 }

@@ -4,6 +4,13 @@
 // buffer size for read()
 #define BUFFER_SIZE 64
 
+// ======= includes =======
+#include <fcntl.h>
+#include <limits.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <unistd.h>
+
 // ======= structs =======
 
 typedef struct s_calcul {
@@ -34,13 +41,6 @@ typedef struct s_list {
     void *data;
     struct s_list *next;
 }              t_list;
-
-// ======= includes =======
-#include <fcntl.h>
-#include <limits.h>
-#include <stdbool.h>
-#include <stdlib.h>
-#include <unistd.h>
 
 // ======= funcs =======
 
@@ -86,8 +86,11 @@ int mx_list_size(t_list *list);
 t_list *mx_create_node(void *data);
 t_list *mx_sort_list(t_list *list, bool (*cmp)(void *, void *));
 
+void mx_pop_back(t_list **list);
+void mx_pop_front(t_list **list);
 void mx_push_back(t_list **list, void *data);
 void mx_push_front(t_list **list, void *data);
 
 // ------- OPTIONAL -------
 // TODO nasyp syda wsiakoy poleznoi melochi
+int mx_strlen_nullcheck(const char *s);
