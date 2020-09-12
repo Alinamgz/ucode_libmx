@@ -59,6 +59,7 @@ void mx_foreach(int *arr, int size, void (*f)(int));
 void mx_printchar(char c);
 void mx_printint(int n);
 void mx_printstr(const char *s);
+void mx_print_strarr(char **arr, const char *delim);
 
 // ------- STRING -------
 char *mx_strcat(char *restrict s1, const char *restrict s2);
