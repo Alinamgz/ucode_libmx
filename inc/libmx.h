@@ -16,8 +16,9 @@
 typedef struct s_calcul {
     unsigned long number;
     unsigned long quot;
-    unsigned long rem;
+    int rem;
     int size;
+    int base;
 }              t_calcul;
 
 typedef struct s_bin_search {
@@ -45,6 +46,7 @@ typedef struct s_list {
 // ======= funcs =======
 
 // ------- UTILS -------
+char *mx_itoa(int number);
 char *mx_nbr_to_hex(unsigned long nbr);
 
 double mx_pow(double n, unsigned int pow);
@@ -62,6 +64,7 @@ void mx_printstr(const char *s);
 void mx_print_strarr(char **arr, const char *delim);
 
 // ------- STRING -------
+char *mx_itoa(int number);
 char *mx_strcat(char *restrict s1, const char *restrict s2);
 char *mx_strcpy(char *dst, const char *src);
 char *mx_strdup(const char *s1);
@@ -95,3 +98,4 @@ void mx_push_front(t_list **list, void *data);
 // ------- OPTIONAL -------
 // TODO nasyp syda wsiakoy poleznoi melochi
 int mx_strlen_nullcheck(const char *s);
+unsigned long mx_mod(int num);
