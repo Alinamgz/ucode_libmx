@@ -68,11 +68,13 @@ char *mx_itoa(int number);
 char *mx_strcat(char *restrict s1, const char *restrict s2);
 char *mx_strcpy(char *dst, const char *src);
 char *mx_strdup(const char *s1);
+char *mx_strndup(const char *s1, size_t n);
 char *mx_strjoin(char const *s1, char const *s2);
 char *mx_strncpy(char *dst, const char *src, int len);
 char *mx_strnew(const int size);
 
 int mx_count_words(const char *str, char delimiter);
+int mx_get_char_index(const char *str, char c);
 int mx_strcmp(const char *s1, const char *s2);
 int mx_strlen(const char *s);
 
