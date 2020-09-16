@@ -73,6 +73,7 @@ char *mx_strjoin(char const *s1, char const *s2);
 char *mx_strncpy(char *dst, const char *src, int len);
 char *mx_strnew(const int size);
 char *mx_strstr(const char *haystack, const char *needle);
+char *mx_strtrim(const char *str);
 
 int mx_count_substr(const char *str, const char *sub);
 int mx_count_words(const char *str, char delimiter);
@@ -104,4 +105,5 @@ void mx_push_front(t_list **list, void *data);
 // ------- OPTIONAL -------
 // TODO nasyp syda wsiakoy poleznoi melochi
 int mx_strlen_nullcheck(const char *s);
+bool mx_isspace(char c);
 unsigned long mx_mod(int num);
