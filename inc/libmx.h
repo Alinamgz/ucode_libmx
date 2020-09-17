@@ -73,6 +73,7 @@ char *mx_strndup(const char *s1, size_t n);
 char *mx_strjoin(char const *s1, char const *s2);
 char *mx_strncpy(char *dst, const char *src, int len);
 char *mx_strnew(const int size);
+char **mx_strsplit(const char *s, char c);
 char *mx_strstr(const char *haystack, const char *needle);
 char *mx_strtrim(const char *str);
 
