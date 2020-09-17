@@ -64,6 +64,7 @@ void mx_printstr(const char *s);
 void mx_print_strarr(char **arr, const char *delim);
 
 // ------- STRING -------
+char *mx_del_extra_spaces(const char *str);
 char *mx_itoa(int number);
 char *mx_strcat(char *restrict s1, const char *restrict s2);
 char *mx_strcpy(char *dst, const char *src);
