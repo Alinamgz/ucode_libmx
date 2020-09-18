@@ -2,29 +2,24 @@
 // TODO
 // look spr 7 tsk 8
 char **mx_strsplit(const char *s, char c) {
-    char **rslt = NULL;
-    char *buf_s = (char*)s;
-    int word_cnt = 0;
-    int w_len = 0;
+    t_strsplit cur = {NULL, (char *)s, 0, 0, 0};
 
-    if (buf_s) {
-        word_cnt = 1 + mx_count_words(s, c);
-        rslt = (char**)malloc(sizeof(char*) * word_cnt);
+    if (cur.buf_s) {
+        cur.w_cnt = mx_count_words(s, c);
+        cur.rslt = (char **)malloc(sizeof(char *) * (cur.w_cnt + 1));
 
-        for (int i = 0; i <= word_cnt; i++) {
-            if (i == word_cnt) {
-                // free(rslt[i]);
-                write(1, "\n\nlol\n\n", 7);
-                rslt[i] = NULL;
+        for (cur.i = 0; cur.rslt && cur.i < cur.w_cnt; cur.i++) {
+            while (*cur.buf_s == c) {
+                cur.buf_s++;
             }
-            else {
-                while(*buf_s == c) buf_s++;
-                for (w_len = 0; buf_s[w_len] && buf_s[w_len] != c; w_len++);
-                rslt[i] = mx_strndup(buf_s, w_len);
-                buf_s += w_len;
+            cur.w_len = 0;
+            while (cur.buf_s[cur.w_len] && cur.buf_s[cur.w_len] != c) {
+                cur.w_len++;
             }
+            cur.rslt[cur.i] = mx_strndup(cur.buf_s, cur.w_len);
+            cur.buf_s += cur.w_len;
         }
+        cur.rslt[cur.i] = NULL;
     }
-
-    return rslt;
+    return cur.rslt;
 }

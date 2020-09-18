@@ -37,6 +37,14 @@ typedef struct s_file_to_str {
     ssize_t dst_rslt;
 }              t_file_to_str;
 
+typedef struct s_strsplit {
+    char **rslt;
+    char *buf_s;
+    int w_cnt;
+    int w_len;
+    int i;
+}              t_strsplit;
+
 
 typedef struct s_list {
     void *data;
