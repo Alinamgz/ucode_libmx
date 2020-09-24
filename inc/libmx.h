@@ -83,6 +83,7 @@ void mx_print_strarr(char **arr, const char *delim);
 // ------- STRING -------
 char *mx_del_extra_spaces(const char *str);
 char *mx_itoa(int number);
+char *mx_file_to_str(int arg_c, const char *filename);
 char *mx_replace_substr(const char *str, const char *sub, const char *replace);
 char *mx_strcat(char *restrict s1, const char *restrict s2);
 char *mx_strcpy(char *dst, const char *src);
@@ -127,5 +128,5 @@ void mx_push_front(t_list **list, void *data);
 bool mx_isspace(char c);
 int mx_check_substr(const char *src, const char *sub);
 int mx_strlen_nullcheck(const char *s);
-t_for_replsub *mx_get_struct(const char *str,const char *sub, const char *repl);
+t_for_replsub *mx_set_struct(const char *str,const char *sub, const char *repl);
 unsigned long mx_mod(int num);

@@ -1,6 +1,6 @@
 #include "libmx.h"
 
-t_for_replsub *mx_get_struct(const char *str,
+t_for_replsub *mx_set_struct(const char *str,
                             const char *sub,
                             const char *repl) {
     int delta_len = 0;

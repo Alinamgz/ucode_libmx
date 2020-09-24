@@ -7,7 +7,7 @@ char *mx_replace_substr(const char *str,
     t_for_replsub *cur = NULL;
 
     if (str && sub && replace) {
-        cur = mx_get_struct(str, sub, replace);
+        cur = mx_set_struct(str, sub, replace);
         rslt = mx_strnew(cur->rslt_len);
         while (*(str + cur->str_i)) {
             if (cur->sub_pnt && (str + cur->str_i) == cur->sub_pnt) {
