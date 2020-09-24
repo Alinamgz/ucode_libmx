@@ -9,7 +9,6 @@ char *mx_replace_substr(const char *str,
     if (str && sub && replace) {
         cur = mx_get_struct(str, sub, replace);
         rslt = mx_strnew(cur->rslt_len);
-
         while (*(str + cur->str_i)) {
             if (cur->sub_pnt && (str + cur->str_i) == cur->sub_pnt) {
                 mx_strcat(rslt, replace);
@@ -22,5 +21,6 @@ char *mx_replace_substr(const char *str,
         }
     }
     free(cur);
+    cur = NULL;
     return rslt;
 }
