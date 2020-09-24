@@ -51,6 +51,15 @@ typedef struct s_list {
     struct s_list *next;
 }              t_list;
 
+typedef struct s_for_replsub {
+    char *sub_pnt;
+    int sub_len;
+    int repl_len;
+    int rslt_len;
+    int str_i;
+    int rslt_i;
+}              t_for_replsub;
+
 // ======= funcs =======
 
 // ------- UTILS -------
@@ -115,7 +124,8 @@ void mx_push_front(t_list **list, void *data);
 
 // ------- OPTIONAL -------
 // TODO nasyp syda wsiakoy poleznoi melochi
+bool mx_isspace(char c);
 int mx_check_substr(const char *src, const char *sub);
 int mx_strlen_nullcheck(const char *s);
-bool mx_isspace(char c);
+t_for_replsub *mx_get_struct(const char *str,const char *sub, const char *repl);
 unsigned long mx_mod(int num);
