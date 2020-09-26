@@ -110,6 +110,7 @@ void mx_swap_char(char *s1, char *s2);
 // ------- MEMORY -------
 
 // TODO udachi
+void *mx_memcpy(void *restrict dst, const void *restrict src, size_t n);
 void *mx_memset(void *b, int c, size_t len);
 
 // ------- LIST -------
