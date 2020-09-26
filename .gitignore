@@ -6,5 +6,8 @@
 *.swo
 .vscode/**/*
 .idea/**/*
-src_draft/**/*
 main_check.c
+
+
+src_draft/**/*
+libmx.a

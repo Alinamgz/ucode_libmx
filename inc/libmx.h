@@ -110,6 +110,7 @@ void mx_swap_char(char *s1, char *s2);
 // ------- MEMORY -------
 
 // TODO udachi
+void *mx_memset(void *b, int c, size_t len);
 
 // ------- LIST -------
 int mx_list_size(t_list *list);
