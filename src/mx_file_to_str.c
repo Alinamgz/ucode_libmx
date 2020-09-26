@@ -11,13 +11,14 @@ char *mx_file_to_str(const char *file) {
 
     while ((fts.src_rslt = read(fts.src_fd, fts.buff, BUFFER_SIZE)) > 0) {
         fts.buff[fts.src_rslt] = 0;
+        
         fts.dst = mx_strjoin(fts.result, fts.buff);
         mx_strdel(&fts.result);
+
         fts.result= mx_strdup(fts.dst);
         mx_strdel(&fts.dst);
-    }
-    if (fts.src_rslt < 0)
-        return NULL;
+    }    
+    fts.result = fts.src_rslt < 0  ? NULL : fts.result;
 
     return fts.result;
 }
