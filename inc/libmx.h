@@ -34,7 +34,6 @@ typedef struct s_file_to_str {
     char* result;
     char buff[BUFFER_SIZE + 1];
     ssize_t src_rslt;
-    ssize_t dst_rslt;
 }              t_file_to_str;
 
 typedef struct s_strsplit {
@@ -83,7 +82,7 @@ void mx_print_strarr(char **arr, const char *delim);
 // ------- STRING -------
 char *mx_del_extra_spaces(const char *str);
 char *mx_itoa(int number);
-char *mx_file_to_str(int arg_c, const char *filename);
+char *mx_file_to_str(const char *file);
 char *mx_replace_substr(const char *str, const char *sub, const char *replace);
 char *mx_strcat(char *restrict s1, const char *restrict s2);
 char *mx_strcpy(char *dst, const char *src);
