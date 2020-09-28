@@ -119,6 +119,7 @@ void *mx_memccpy(void *restrict dst,
                  int c,
                  size_t n);
 void *mx_memset(void *b, int c, size_t len);
+void *mx_memrchr(const void *s, int c, size_t n);
 
 // ------- LIST -------
 int mx_list_size(t_list *list);
