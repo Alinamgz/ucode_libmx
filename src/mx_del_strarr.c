@@ -1,5 +1,3 @@
-// TODO
-
 #include "libmx.h"
 
 void mx_del_strarr(char ***arr) {
