@@ -10,6 +10,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <malloc/malloc.h>
 
 // ======= structs =======
 
@@ -126,6 +127,7 @@ void *mx_memccpy(void *restrict dst,
 void *mx_memset(void *b, int c, size_t len);
 void *mx_memrchr(const void *s, int c, size_t n);
 void *mx_memmove(void *dst, const void *src, size_t len);
+void *mx_realloc(void *ptr, size_t size);
 
 // ------- LIST -------
 int mx_list_size(t_list *list);
