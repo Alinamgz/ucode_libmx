@@ -81,6 +81,7 @@ void mx_printchar(char c);
 void mx_printint(int n);
 void mx_printstr(const char *s);
 void mx_print_strarr(char **arr, const char *delim);
+void mx_print_unicode(wchar_t c);
 
 // ---------------------- STRING ----------------------
 char *mx_del_extra_spaces(const char *str);
@@ -152,6 +153,7 @@ char *mx_strchr(const char *s, int c);
 
 double mx_timer(void (*f)());
 
+int mx_atoi(const char *str);
 int mx_check_substr(const char *src, const char *sub);
 int mx_factorial_iter(int n);
 int mx_gcd(int a, int b);
