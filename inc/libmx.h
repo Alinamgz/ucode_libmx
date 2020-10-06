@@ -151,8 +151,6 @@ bool mx_isupper(int c);
 char *mx_concat_words(char **words);
 char *mx_strchr(const char *s, int c);
 
-double mx_timer(void (*f)());
-
 int mx_atoi(const char *str);
 int mx_check_substr(const char *src, const char *sub);
 int mx_factorial_iter(int n);
