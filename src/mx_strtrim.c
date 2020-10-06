@@ -1,5 +1,5 @@
 #include "libmx.h"
-// TODO
+
 char *mx_strtrim(const char *str) {
     char *rslt = NULL;
     int rslt_len = 0;

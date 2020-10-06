@@ -1,6 +1,5 @@
 #include "libmx.h"
-// TODO
-// look spr 7 tsk 8
+
 char **mx_strsplit(const char *s, char c) {
     t_strsplit cur = {NULL, (char *)s, 0, 0, 0};
 

@@ -1,5 +1,5 @@
 #include "libmx.h"
-// TODO
+
 char *mx_del_extra_spaces(const char *str) {
     char *rslt = mx_strtrim(str);
     char *final = NULL;

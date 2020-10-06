@@ -1,18 +1,19 @@
 #pragma once
 
-// ======= defines =======
+// ===================== defines ======================
 // buffer size for read()
 #define BUFFER_SIZE 64
 
-// ======= includes =======
+// ===================== includes =====================
 #include <fcntl.h>
 #include <limits.h>
+#include <malloc/malloc.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <malloc/malloc.h>
+#include <time.h>
 
-// ======= structs =======
+// ===================== structs ======================
 
 typedef struct s_calcul {
     unsigned long number;
@@ -60,9 +61,9 @@ typedef struct s_for_replsub {
     int rslt_i;
 }              t_for_replsub;
 
-// ======= funcs =======
+// ===================== functions ====================
 
-// ------- UTILS -------
+// ---------------------- UTILS ----------------------
 char *mx_itoa(int number);
 char *mx_nbr_to_hex(unsigned long nbr);
 
@@ -81,7 +82,7 @@ void mx_printint(int n);
 void mx_printstr(const char *s);
 void mx_print_strarr(char **arr, const char *delim);
 
-// ------- STRING -------
+// ---------------------- STRING ----------------------
 char *mx_del_extra_spaces(const char *str);
 char *mx_itoa(int number);
 char *mx_file_to_str(const char *file);
@@ -109,9 +110,7 @@ void mx_strdel(char **str);
 void mx_str_reverse(char *s);
 void mx_swap_char(char *s1, char *s2);
 
-// ------- MEMORY -------
-
-// TODO udachi
+// ---------------------- MEMORY ----------------------
 int mx_memcmp(const void *s1, const void *s2, size_t n);
 
 void *mx_memchr(const void *s, int c, size_t n);
@@ -130,7 +129,7 @@ void *mx_memrchr(const void *s, int c, size_t n);
 void *mx_memmove(void *dst, const void *src, size_t len);
 void *mx_realloc(void *ptr, size_t size);
 
-// ------- LIST -------
+// ---------------------- LIST ------------------------
 int mx_list_size(t_list *list);
 
 t_list *mx_create_node(void *data);
@@ -141,10 +140,29 @@ void mx_pop_front(t_list **list);
 void mx_push_back(t_list **list, void *data);
 void mx_push_front(t_list **list, void *data);
 
-// ------- OPTIONAL -------
-// TODO nasyp syda wsiakoy poleznoi melochi
+// ---------------------- OPTIONAL --------------------
+bool mx_isalpha(int c);
+bool mx_isdigit(int c);
+bool mx_islower(int c);
 bool mx_isspace(char c);
+bool mx_isupper(int c);
+
+char *mx_concat_words(char **words);
+char *mx_strchr(const char *s, int c);
+
+double mx_timer(void (*f)());
+
 int mx_check_substr(const char *src, const char *sub);
+int mx_factorial_iter(int n);
+int mx_gcd(int a, int b);
+int mx_lcm(int a, int b);
 int mx_strlen_nullcheck(const char *s);
+int mx_tolower(int c);
+int mx_toupper(int c);
+
 t_for_replsub *mx_set_struct(const char *str,const char *sub, const char *repl);
+
 unsigned long mx_mod(int num);
+
+void mx_only_printable(void);
+void mx_print_arr_int(const int *arr, int size);
