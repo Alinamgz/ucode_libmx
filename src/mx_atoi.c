@@ -1,6 +1,6 @@
 #include "libmx.h"
 
-int mx_vai_atoi(const char *str) {
+int mx_atoi(const char *str) {
     unsigned long long n = 0;
     int i = 0;
     int ch = 1;
