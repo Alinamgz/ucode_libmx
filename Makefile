@@ -20,7 +20,7 @@ CFLAGS := -std=c11 -Wall -Werror -Wextra -Wpedantic
 
 # ========== body =========
 
-all: ${NAME} clean
+all: ${NAME}
 
 ${NAME}: $(OBJ_FILES)
 	@ar rcs $(NAME) $(OBJ_FILES)
@@ -36,8 +36,7 @@ $(OBJ_DIR):
 clean:
 	@$(RM) $(OBJ_DIR)
 
-uninstall:
-	@$(RM) $(OBJ_DIR)
+uninstall: clean
 	@$(RM) $(NAME)
 
 reinstall: uninstall all
